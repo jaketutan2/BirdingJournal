@@ -1,0 +1,50 @@
+@model BirdSighting
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>NewBird</title>
+        <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="badge bg-primary text-white">
+            Add a New Bird Sighting
+        </div>
+        <div class ="card card-outline-primary m-1 p-1">
+            <form asp-action="BirdSighting" method="post">
+                <div>
+                    <label asp-for="BirdCommonName">Bird's Common Name:</label>
+                    <input asp-for="BirdCommonName" />
+                </div>
+                <div>
+                    <label asp-for="SpottedDate">Spotted Date: </label>
+                    <input asp-for="SpottedDate" />
+                </div>
+                <div>
+                    <label asp-for="Notes">Notes: </label>
+                    <input asp-for="Notes" />
+                </div>
+                <div>
+                    <label asp-for="IsFemale">Was bird male or female? (Optional)</label>
+                    <select asp-for="IsFemale">
+                    <option value="">Choose an option</option>
+                    <option value="false">Male</option>
+                    <option value="true">Female</option>
+                    </select>
+                </div>
+                <div>
+                    <label asp-for="IsJuvenile">Was bird juvenile or adult? (Optional)</label>
+                    <select asp-for="IsJuvenile">
+                    <option value="">Choose an option</option>
+                    <option value="true">Juvenile</option>
+                    <option value="false">Adult</option>
+                    </select>
+                </div>
+                <button type="submit">Record Sighting</button>
+            </form>
+        </div>
+    </body>
+</html>

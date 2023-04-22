@@ -1,0 +1,9 @@
+using Microsoft.AspNetCore.Mvc;
+
+namespace BirdingJournal.Managers{
+    public class BirdingManager {
+        public ViewResult getLifeList() {
+            return null;
+        }
+    }
+}
