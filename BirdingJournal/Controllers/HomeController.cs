@@ -1,19 +1,38 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using BirdingJournal.Models;
-// using BirdingJournal.Managers;
+using BirdingJournal.DAL;
+using BirdingJournal.Models.ViewModels;
 
-namespace BirdingJournal.Controllers;
+namespace BirdingJournal.Controllers {
 
-public class HomeController : Controller
-{
-    // public BirdingManager? birdingManager;
+  public class HomeController : Controller
+  {
+    public int PageSize = 8;
 
+    private BirdingJournalDbContext db;
+    private BirdingJournalRepository repo;
+
+    public HomeController(BirdingJournalDbContext db){
+      this.db = db;
+      this.repo = new BirdingJournalRepository(db);
+    }
+
+    public IActionResult Index() {
+      return View(db.BirdSightings.ToList());
+    }
+
+    [HttpGet]
     public ViewResult NewBird() {
-    return View("NewBird"); 
-  }
-   public ViewResult Index() {
-    // ViewResult viewResult= birdingManager.getLifeList();
-    return View("LifeList"); 
+      return View("NewBird"); 
+    }
+
+    [HttpPost]
+    public ViewResult NewBirdPost(BirdSighting birdSighting) {
+      System.Diagnostics.Debug.WriteLine("Entered Method NewBirdPost");
+
+      repo.InsertBirdSighting(birdSighting);
+      return View("Thanks", birdSighting);
+    }
   }
 }

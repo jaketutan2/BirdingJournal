@@ -1,13 +1,16 @@
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
 namespace BirdingJournal.Models {
     public class BirdSighting {
-        public string? BirdCommonName { get; set; }
-        public string? BirdScientificName {get; set;}
-        public string? BirdFamily {get; set;}
+        public long? BirdSightingID {get; set;}
+        public string? BirdCommonName {get; set;}
+        public long? BirdID {get; set;}
+        public long User_ID {get; set;}
         public string? Location { get; set; }
         public DateTime SpottedDate { get; set;}
         public string? Notes {get; set;}
-        public Boolean IsFemale {get; set;}
-        public Boolean IsJuvenile {get; set;}
-
+        public string? IsFemale {get; set;}
+        public string? IsJuvenile {get; set;}
     }
 }

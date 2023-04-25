@@ -1,7 +1,17 @@
+using BirdingJournal.Models;
+using BirdingJournal.DAL;
+using System.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<BirdingJournalDbContext>(opts => {opts.UseSqlServer(builder.Configuration["ConnectionStrings:BirdingJournalConnection"]);
+});
+
+builder.Services.AddScoped<IBirdingJournalRepository, EFBirdingJournalRepository>();
 
 var app = builder.Build();
 

@@ -1,0 +1,22 @@
+@model BirdingJournal.Models.BirdSighting
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name ="viewport" content="width=device-width" />
+        <title>Thanks</title>
+    </head>
+    <body>
+        <div>
+            <h3>New Bird Sighting Added</h3>
+        </div>
+        <div>
+            <p>Your @Model.SpottedDate.TimeOfDay <b>@Model.BirdCommonName</b> sighting has been added to your Life List.</p>
+        </div>
+        <div>
+            Click <a asp-action="Index">here</a> to see your Life List. 
+        </div>
+    </body>
+</html>

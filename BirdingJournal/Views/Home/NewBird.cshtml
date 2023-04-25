@@ -1,50 +1,82 @@
-@model BirdSighting
+@model BirdingJournal.Models.BirdSighting
 @{
     Layout = null;
 }
+
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width" />
-        <title>NewBird</title>
-        <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    </head>
-    <body>
-        <div class="badge bg-primary text-white">
-            Add a New Bird Sighting
-        </div>
-        <div class ="card card-outline-primary m-1 p-1">
-            <form asp-action="BirdSighting" method="post">
-                <div>
-                    <label asp-for="BirdCommonName">Bird's Common Name:</label>
-                    <input asp-for="BirdCommonName" />
-                </div>
-                <div>
-                    <label asp-for="SpottedDate">Spotted Date: </label>
-                    <input asp-for="SpottedDate" />
-                </div>
-                <div>
-                    <label asp-for="Notes">Notes: </label>
-                    <input asp-for="Notes" />
-                </div>
-                <div>
-                    <label asp-for="IsFemale">Was bird male or female? (Optional)</label>
-                    <select asp-for="IsFemale">
-                    <option value="">Choose an option</option>
-                    <option value="false">Male</option>
-                    <option value="true">Female</option>
-                    </select>
-                </div>
-                <div>
-                    <label asp-for="IsJuvenile">Was bird juvenile or adult? (Optional)</label>
-                    <select asp-for="IsJuvenile">
-                    <option value="">Choose an option</option>
-                    <option value="true">Juvenile</option>
-                    <option value="false">Adult</option>
-                    </select>
-                </div>
-                <button type="submit">Record Sighting</button>
-            </form>
-        </div>
-    </body>
-</html>
+<html lang="en">
+  <head>
+    <title>New Bird</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="~/css/site.css" crossorigin="anonymous">
+  </head>
+	<div class="section" id="booking">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7 col-md-push-5">
+						<div class="booking-cta">
+							<h1>Add New Bird Sighting</h1>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi facere, soluta magnam consectetur molestias itaque
+								ad sint fugit architecto incidunt iste culpa perspiciatis possimus voluptates aliquid consequuntur cumque quasi.
+								Perspiciatis.
+							</p>
+						</div>
+					</div>
+					<div class="col-md-4 col-md-pull-7">
+						<div class="booking-form">
+                            <form asp-action="NewBirdPost" method="post">
+								<div class="form-group">
+                                    <label asp-for="BirdCommonName" class="form-label">Bird's Common Name:</label>
+                                    <input asp-for="BirdCommonName" class="form-control" type="text" placeholder="Bald Eagle" />
+								</div>
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+                                            <label asp-for="Location" class="form-label">Location:</label>
+                                            <input asp-for="Location" class="form-control" type="text" placeholder="Fort DeSoto State Park" />
+								        </div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+                                            <label asp-for="SpottedDate" class="form-label">Spotted Date: </label>
+                                            <input asp-for="SpottedDate" class="form-control" type="date"  />
+								        </div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-4">
+										<div class="form-group">
+                                            <label asp-for="IsFemale" class="form-label">Was bird male or female? (Optional)</label>
+											<select asp-for="IsFemale" class="form-control">
+												<option>Male</option>
+												<option>Felale</option>
+												<option>Pair</option>
+											</select>
+											<span class="select-arrow"></span>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group">
+                                            <label asp-for="IsJuvenile" class="form-label">Was bird adult or juvenile? (Optional)</label>
+											<select asp-for="IsJuvenile" class="form-control">
+												<option>Adult</option>
+												<option>Juvenile</option>
+											</select>
+											<span class="select-arrow"></span>
+										</div>
+									</div>
+								</div>
+								<div class="form-btn">
+									<button class="submit-btn">Record Sighting</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
