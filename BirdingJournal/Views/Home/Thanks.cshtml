@@ -13,7 +13,7 @@
             <h3>New Bird Sighting Added</h3>
         </div>
         <div>
-            <p>Your @Model.SpottedDate.TimeOfDay <b>@Model.BirdCommonName</b> sighting has been added to your Life List.</p>
+            <p>Your @Model.SpottedDate.ToShortDateString() <b>@Model.BirdCommonName</b> sighting has been added to your Life List.</p>
         </div>
         <div>
             Click <a asp-action="Index">here</a> to see your Life List. 

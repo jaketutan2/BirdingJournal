@@ -9,9 +9,13 @@
     <title>New Bird</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="~/css/site.css" crossorigin="anonymous">
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<!-- twitter-typeahead -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.3.1/typeahead.bundle.min.js"></script>
   </head>
 	<div class="section" id="booking">
 		<div class="section-center">
@@ -20,54 +24,100 @@
 					<div class="col-md-7 col-md-push-5">
 						<div class="booking-cta">
 							<h1>Add New Bird Sighting</h1>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi facere, soluta magnam consectetur molestias itaque
-								ad sint fugit architecto incidunt iste culpa perspiciatis possimus voluptates aliquid consequuntur cumque quasi.
-								Perspiciatis.
-							</p>
 						</div>
 					</div>
 					<div class="col-md-4 col-md-pull-7">
 						<div class="booking-form">
                             <form asp-action="NewBirdPost" method="post">
 								<div class="form-group">
-                                    <label asp-for="BirdCommonName" class="form-label">Bird's Common Name:</label>
-                                    <input asp-for="BirdCommonName" class="form-control" type="text" placeholder="Bald Eagle" />
+									<form method="get" action="SearchBird">
+										<label asp-for="BirdCommonName" class="form-label">Bird's Common Name:</label>
+										<input asp-for="BirdCommonName" class="input-field" type="text" id="search-box" class="typeahead" data-provide="typeahead" placeholder="Search birds...">
+										  <ul class="dropdown">
+											<!-- options will be added dynamically here -->
+										</ul>
+									<script>
+										$(document).ready(function () {
+											var engine = new Bloodhound({
+												datumTokenizer: function (datum) {
+													return Bloodhound.tokenizers.whitespace(datum.value);
+												},
+												queryTokenizer: Bloodhound.tokenizers.whitespace,
+												remote: {
+													url: '@Url.Action("SearchBird", "Home")?term=%QUERY',
+													wildcard: '%QUERY'
+												}
+											});
+											var dropdown = $('.typeahead .dropdown');
+											var input = $('.typeahead input');
+
+
+											$('#search-box').typeahead({
+												minLength: 3,
+												highlight: true
+											},
+											{
+												name: 'birds',
+												source: engine,
+												display: function (data) {
+													return data; // Display the bird common name
+												},
+												templates: {
+													suggestion: function (data) {
+														return '<div>' + data + '</div>'; // Format the suggestion with the bird common name
+													}
+												}
+											});
+											  input.on('typeahead:render', function(event, suggestions) {
+												var html = '';
+
+												$.each(suggestions, function(index, suggestion) {
+												html += '<li>' + suggestion.value + '</li>';
+												});
+
+												dropdown.html(html);
+											});
+										});
+									</script>
+									</form>
 								</div>
 								<div class="row">
-									<div class="col-sm-6">
-										<div class="form-group">
-                                            <label asp-for="Location" class="form-label">Location:</label>
-                                            <input asp-for="Location" class="form-control" type="text" placeholder="Fort DeSoto State Park" />
-								        </div>
-									</div>
-									<div class="col-sm-6">
-										<div class="form-group">
-                                            <label asp-for="SpottedDate" class="form-label">Spotted Date: </label>
-                                            <input asp-for="SpottedDate" class="form-control" type="date"  />
-								        </div>
+									<div class="form-group">
+										<label asp-for="Location" class="form-label">Location:</label>
+										<input asp-for="Location" class="form-control" type="text" placeholder="Fort DeSoto State Park" />
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-sm-4">
-										<div class="form-group">
-                                            <label asp-for="IsFemale" class="form-label">Was bird male or female? (Optional)</label>
-											<select asp-for="IsFemale" class="form-control">
-												<option>Male</option>
-												<option>Felale</option>
-												<option>Pair</option>
-											</select>
-											<span class="select-arrow"></span>
-										</div>
+									<div class="form-group">
+										<label asp-for="SpottedDate" class="form-label">Spotted Date: </label>
+										<input asp-for="SpottedDate" class="form-control" type="date"  />
 									</div>
-									<div class="col-sm-4">
-										<div class="form-group">
-                                            <label asp-for="IsJuvenile" class="form-label">Was bird adult or juvenile? (Optional)</label>
-											<select asp-for="IsJuvenile" class="form-control">
-												<option>Adult</option>
-												<option>Juvenile</option>
-											</select>
-											<span class="select-arrow"></span>
-										</div>
+								</div>
+								<div class="row">
+									<div class="form-group">
+										<label asp-for="IsFemale" class="form-label">Was bird male or female? (Optional)</label>
+										<select asp-for="IsFemale" class="form-control">
+											<option>Male</option>
+											<option>Female</option>
+											<option>Pair</option>
+										</select>
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+								<div class="row">
+									<div class="form-group">
+										<label asp-for="IsJuvenile" class="form-label">Was bird adult or juvenile? (Optional)</label>
+										<select asp-for="IsJuvenile" class="form-control">
+											<option>Adult</option>
+											<option>Juvenile</option>
+										</select>
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+								<div class="row">
+									<div class="form-group">
+										<label asp-for="Notes" class="form-label">Notes: </label>
+										<input asp-for="Notes" class="form-control" type="text"  />
 									</div>
 								</div>
 								<div class="form-btn">

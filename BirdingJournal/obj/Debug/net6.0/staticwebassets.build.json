@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dmQGNYVqFKXr0LwTm8/nSPOgTSNDNL/FVGj8RdFTiHg=",
+  "Hash": "oFyfMOVzOconP0sniFzt1dn1k5q0TXoymutRKUaNRgU=",
   "Source": "BirdingJournal",
   "BasePath": "_content/BirdingJournal",
   "Mode": "Default",
@@ -83,6 +83,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\jrt15\\BirdingJournal\\BirdingJournal\\wwwroot\\img\\blue_heron.JPG",
+      "SourceId": "BirdingJournal",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jrt15\\BirdingJournal\\BirdingJournal\\wwwroot\\",
+      "BasePath": "_content/BirdingJournal",
+      "RelativePath": "img/blue_heron.JPG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\blue_heron.JPG"
+    },
+    {
+      "Identity": "C:\\Users\\jrt15\\BirdingJournal\\BirdingJournal\\wwwroot\\img\\owl.gif",
+      "SourceId": "BirdingJournal",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jrt15\\BirdingJournal\\BirdingJournal\\wwwroot\\",
+      "BasePath": "_content/BirdingJournal",
+      "RelativePath": "img/owl.gif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\owl.gif"
     },
     {
       "Identity": "C:\\Users\\jrt15\\BirdingJournal\\BirdingJournal\\wwwroot\\js\\site.js",

@@ -14,5 +14,7 @@
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5"/>
     <PackageReference Include="System.Data.Entity.Repository" Version="*"/>
     <PackageReference Include="EntityFramework" Version="*"/>
+    <PackageReference Include="Bloodhound" Version="*"/>
+    <PackageReference Include="Twitter.Typeahead" Version="*"/>
   </ItemGroup>
 </Project>

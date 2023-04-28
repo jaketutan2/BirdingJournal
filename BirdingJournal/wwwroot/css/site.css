@@ -240,7 +240,6 @@ body{margin-top:20px;
   
   #booking {
     font-family: 'Montserrat', sans-serif;
-    background-image: url('../../img/blue_heron.JPG');
     background-size: cover;
     background-position: center;
   }
@@ -362,3 +361,32 @@ body{margin-top:20px;
     font-size: 16px;
     color: rgba(255, 255, 255, 0.8);
   }
+  /* Style the input field */
+.input-field {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 10px;
+}
+
+/* Style the suggestions dropdown */
+.dropdown {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  font-size: 14px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* Style the suggestions */
+.dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Style the selected suggestion */
+.dropdown-item.active {
+  background-color: #f2f2f2;
+}

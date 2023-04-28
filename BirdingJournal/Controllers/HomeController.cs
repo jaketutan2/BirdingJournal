@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using BirdingJournal.Models;
 using BirdingJournal.DAL;
 using BirdingJournal.Models.ViewModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace BirdingJournal.Controllers {
 
@@ -10,7 +11,7 @@ namespace BirdingJournal.Controllers {
   {
     public int PageSize = 8;
 
-    private BirdingJournalDbContext db;
+    private readonly BirdingJournalDbContext db;
     private BirdingJournalRepository repo;
 
     public HomeController(BirdingJournalDbContext db){
@@ -25,6 +26,17 @@ namespace BirdingJournal.Controllers {
     [HttpGet]
     public ViewResult NewBird() {
       return View("NewBird"); 
+    }
+
+    public async Task<IActionResult> SearchBird(string term)
+    {
+        Console.WriteLine("term" + term);
+        var birds = await db.Birds
+            .Where(b => b.BirdCommonName.Contains(term))
+            .Select(b => b.BirdCommonName)
+            .ToListAsync();
+
+        return Json(birds);
     }
 
     [HttpPost]

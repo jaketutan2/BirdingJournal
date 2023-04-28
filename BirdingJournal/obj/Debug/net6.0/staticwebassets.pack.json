@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\jrt15\\BirdingJournal\\BirdingJournal\\wwwroot\\img\\blue_heron.JPG",
+      "PackagePath": "staticwebassets\\img\\blue_heron.JPG"
+    },
+    {
+      "Id": "C:\\Users\\jrt15\\BirdingJournal\\BirdingJournal\\wwwroot\\img\\owl.gif",
+      "PackagePath": "staticwebassets\\img\\owl.gif"
+    },
+    {
       "Id": "C:\\Users\\jrt15\\BirdingJournal\\BirdingJournal\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

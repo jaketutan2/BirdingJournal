@@ -38,6 +38,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Bloodhound": {
+              "target": "Package",
+              "version": "[*, )"
+            },
             "EntityFramework": {
               "target": "Package",
               "version": "[*, )"
@@ -63,6 +67,10 @@
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.5, )"
+            },
+            "Twitter.Typeahead": {
+              "target": "Package",
+              "version": "[*, )"
             }
           },
           "imports": [
