@@ -1,6 +1,6 @@
 @model BirdingJournal.Models.BirdSighting
 @{
-    Layout = null;
+    Layout = "_Layout";
 }
 
 <!DOCTYPE html>
@@ -16,71 +16,18 @@
 
 	<!-- twitter-typeahead -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.3.1/typeahead.bundle.min.js"></script>
+	<script src="/_framework/aspnetcore-browser-refresh.js"></script>
+	<script src="~/js/site.js"></script>
   </head>
+  <body>
 	<div class="section" id="booking">
 		<div class="section-center">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-7 col-md-push-5">
-						<div class="booking-cta">
-							<h1>Add New Bird Sighting</h1>
-						</div>
-					</div>
 					<div class="col-md-4 col-md-pull-7">
 						<div class="booking-form">
-                            <form asp-action="NewBirdPost" method="post">
-								<div class="form-group">
-									<form method="get" action="SearchBird">
-										<label asp-for="BirdCommonName" class="form-label">Bird's Common Name:</label>
-										<input asp-for="BirdCommonName" class="input-field" type="text" id="search-box" class="typeahead" data-provide="typeahead" placeholder="Search birds...">
-										  <ul class="dropdown">
-											<!-- options will be added dynamically here -->
-										</ul>
-									<script>
-										$(document).ready(function () {
-											var engine = new Bloodhound({
-												datumTokenizer: function (datum) {
-													return Bloodhound.tokenizers.whitespace(datum.value);
-												},
-												queryTokenizer: Bloodhound.tokenizers.whitespace,
-												remote: {
-													url: '@Url.Action("SearchBird", "Home")?term=%QUERY',
-													wildcard: '%QUERY'
-												}
-											});
-											var dropdown = $('.typeahead .dropdown');
-											var input = $('.typeahead input');
-
-
-											$('#search-box').typeahead({
-												minLength: 3,
-												highlight: true
-											},
-											{
-												name: 'birds',
-												source: engine,
-												display: function (data) {
-													return data; // Display the bird common name
-												},
-												templates: {
-													suggestion: function (data) {
-														return '<div>' + data + '</div>'; // Format the suggestion with the bird common name
-													}
-												}
-											});
-											  input.on('typeahead:render', function(event, suggestions) {
-												var html = '';
-
-												$.each(suggestions, function(index, suggestion) {
-												html += '<li>' + suggestion.value + '</li>';
-												});
-
-												dropdown.html(html);
-											});
-										});
-									</script>
-									</form>
-								</div>
+                            <form id="birdSighting" asp-action="NewBirdPost" asp-controller="Home" method="post">
+								@await Html.PartialAsync("BirdSearchView")
 								<div class="row">
 									<div class="form-group">
 										<label asp-for="Location" class="form-label">Location:</label>
@@ -121,7 +68,7 @@
 									</div>
 								</div>
 								<div class="form-btn">
-									<button class="submit-btn">Record Sighting</button>
+									<button class="submit-btn" type="submit">Record Sighting</button>
 								</div>
 							</form>
 						</div>
@@ -130,3 +77,4 @@
 			</div>
 		</div>
 	</div>
+  </body>

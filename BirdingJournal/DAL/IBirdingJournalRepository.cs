@@ -5,10 +5,10 @@ using BirdingJournal.Models;
 namespace BirdingJournal.DAL {
     public interface IBirdingJournalRepository {
         IEnumerable<BirdSighting> GetBirdSightings();
-        BirdSighting GetBirdSightingByID(int birdSightingID);
+        BirdSighting GetBirdSightingByID(long? birdSightingID);
         void UpdateBirdSighting(BirdSighting bs);
         void InsertBirdSighting(BirdSighting bs);
-        void DeleteBirdSighting(int birdSightingID);
+        void DeleteBirdSighting(long birdSightingID);
         void Save();
     }
 }

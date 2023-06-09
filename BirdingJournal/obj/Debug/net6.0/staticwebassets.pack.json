@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\BirdingJournal.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\jrt15\\BirdingJournal\\BirdingJournal\\wwwroot\\css\\.DS_Store",
+      "PackagePath": "staticwebassets\\css\\.DS_Store"
+    },
+    {
+      "Id": "C:\\Users\\jrt15\\BirdingJournal\\BirdingJournal\\wwwroot\\css\\animate.css",
+      "PackagePath": "staticwebassets\\css\\animate.css"
+    },
+    {
       "Id": "C:\\Users\\jrt15\\BirdingJournal\\BirdingJournal\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -25,8 +33,20 @@
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
+      "Id": "C:\\Users\\jrt15\\BirdingJournal\\BirdingJournal\\wwwroot\\lib\\animate.css",
+      "PackagePath": "staticwebassets\\lib\\animate.css"
+    },
+    {
+      "Id": "C:\\Users\\jrt15\\BirdingJournal\\BirdingJournal\\wwwroot\\lib\\bootstrap\\.DS_Store",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\.DS_Store"
+    },
+    {
       "Id": "C:\\Users\\jrt15\\BirdingJournal\\BirdingJournal\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\jrt15\\BirdingJournal\\BirdingJournal\\wwwroot\\lib\\bootstrap\\_media.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\_media.css"
     },
     {
       "Id": "C:\\Users\\jrt15\\BirdingJournal\\BirdingJournal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
@@ -203,6 +223,26 @@
     {
       "Id": "C:\\Users\\jrt15\\BirdingJournal\\BirdingJournal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\jrt15\\BirdingJournal\\BirdingJournal\\wwwroot\\lib\\bootstrap\\mixins\\.DS_Store",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\mixins\\.DS_Store"
+    },
+    {
+      "Id": "C:\\Users\\jrt15\\BirdingJournal\\BirdingJournal\\wwwroot\\lib\\bootstrap\\mixins\\_border-radius.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\mixins\\_border-radius.css"
+    },
+    {
+      "Id": "C:\\Users\\jrt15\\BirdingJournal\\BirdingJournal\\wwwroot\\lib\\bootstrap\\mixins\\_screen-reader.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\mixins\\_screen-reader.css"
+    },
+    {
+      "Id": "C:\\Users\\jrt15\\BirdingJournal\\BirdingJournal\\wwwroot\\lib\\bootstrap\\mixins\\_visibility.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\mixins\\_visibility.css"
+    },
+    {
+      "Id": "C:\\Users\\jrt15\\BirdingJournal\\BirdingJournal\\wwwroot\\lib\\bootstrap\\utilities\\_stretched-link.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\utilities\\_stretched-link.css"
     },
     {
       "Id": "C:\\Users\\jrt15\\BirdingJournal\\BirdingJournal\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",

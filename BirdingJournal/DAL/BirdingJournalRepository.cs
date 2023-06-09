@@ -17,7 +17,7 @@ namespace BirdingJournal.DAL{
             return context.BirdSightings.ToList();
         }
 
-        public BirdSighting GetBirdSightingByID(int id) {
+        public BirdSighting GetBirdSightingByID(long? id) {
             return context.BirdSightings.Find(id);
         }
 
@@ -26,7 +26,7 @@ namespace BirdingJournal.DAL{
             this.Save();
         }
 
-        public void DeleteBirdSighting(int birdSightingID) {
+        public void DeleteBirdSighting(long birdSightingID) {
             if (birdSightingID !=0) {
                 BirdSighting birdSighting = context.BirdSightings?.Find(birdSightingID);
                 context.BirdSightings.Remove(birdSighting);
@@ -35,6 +35,7 @@ namespace BirdingJournal.DAL{
         }
 
         public void UpdateBirdSighting(BirdSighting birdSighting) {
+            context.Update(birdSighting);
             context.SaveChanges();
         }
 
