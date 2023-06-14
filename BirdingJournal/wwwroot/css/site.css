@@ -8289,3 +8289,8 @@ h1, h2, h3, h4, h5,
       height: 30px; }
       .social-media p a span {
         color: #fff; } }
+@media (min-width: 1025px) {
+.h-custom {
+height: 100vh !important;
+}
+}

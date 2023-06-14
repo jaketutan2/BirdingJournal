@@ -18409,6 +18409,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\jrt15\\BirdingJournal\\BirdingJournal\\Views\\Home\\LocationSearch.cshtml",
+      "TargetPath": "Views\\Home\\LocationSearch.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\jrt15\\BirdingJournal\\BirdingJournal\\Views\\Home\\BirdSighting.cshtml",
       "TargetPath": "Views\\Home\\BirdSighting.cshtml",
       "FileKind": "mvc"

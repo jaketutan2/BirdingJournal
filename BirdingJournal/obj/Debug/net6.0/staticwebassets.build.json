@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "rChpiN5HOjK+ilLCqn5/h5VHlaNTbDrkyvZcdrR0Cjs=",
+  "Hash": "xfc4Iw96Tqdo6yg/4e8ZDNzMz0VZ69B6BxgR5lysA4c=",
   "Source": "BirdingJournal",
   "BasePath": "_content/BirdingJournal",
   "Mode": "Default",
@@ -967,6 +967,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Identity": "C:\\Users\\jrt15\\BirdingJournal\\BirdingJournal\\wwwroot\\lib\\bootstrap\\dist\\js\\popper.js",
+      "SourceId": "BirdingJournal",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jrt15\\BirdingJournal\\BirdingJournal\\wwwroot\\",
+      "BasePath": "_content/BirdingJournal",
+      "RelativePath": "lib/bootstrap/dist/js/popper.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\popper.js"
     },
     {
       "Identity": "C:\\Users\\jrt15\\BirdingJournal\\BirdingJournal\\wwwroot\\lib\\bootstrap\\LICENSE",

@@ -225,6 +225,10 @@
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
+      "Id": "C:\\Users\\jrt15\\BirdingJournal\\BirdingJournal\\wwwroot\\lib\\bootstrap\\dist\\js\\popper.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\popper.js"
+    },
+    {
       "Id": "C:\\Users\\jrt15\\BirdingJournal\\BirdingJournal\\wwwroot\\lib\\bootstrap\\mixins\\.DS_Store",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\mixins\\.DS_Store"
     },

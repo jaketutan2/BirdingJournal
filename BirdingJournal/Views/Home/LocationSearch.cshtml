@@ -1,0 +1,47 @@
+@model BirdingJournal.Models.BirdSighting
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Location Search</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.3.1/typeahead.bundle.min.js"></script>
+    
+    <script>
+    // Initialize the Places Autocomplete
+    function initializeAutocomplete() {
+        var input = document.getElementById('locationInput');
+        var autocomplete = new google.maps.places.Autocomplete(input);
+    }
+
+    // Load the Google Maps API and initialize the autocomplete when the page is ready
+    function loadGoogleMaps() {
+        var script = document.createElement('script');
+        script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBlRizlG-BvVUw3mMYNtiEtQBlKH9i6_go&libraries=places&callback=initializeAutocomplete";
+        document.body.appendChild(script);
+    }
+
+    // Call the function to load Google Maps and initialize the autocomplete
+    loadGoogleMaps();
+    </script>
+
+  </head>
+    <body>
+        <div class="form-group">
+            <div method="get" action="LocationSearch">
+                <label asp-for="Location" class="form-label">Location:</label>
+                <input type="text" id="locationInput" asp-for="Location" placeholder="Enter location">
+                <ul class="dropdown">
+                    <!-- options will be added dynamically here -->
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

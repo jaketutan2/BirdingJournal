@@ -11,22 +11,88 @@
     <meta charset="utf-8">
 
     <link rel="stylesheet" href="~/css/site.css" crossorigin="anonymous">
-	<!-- jQuery -->
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
-	<!-- twitter-typeahead -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.3.1/typeahead.bundle.min.js"></script>
-	<script src="/_framework/aspnetcore-browser-refresh.js"></script>
-	<script src="~/js/site.js"></script>
+    <!-- twitter-typeahead -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.3.1/typeahead.bundle.min.js"></script>
+    <script src="/_framework/aspnetcore-browser-refresh.js"></script>
+    <script src="~/js/site.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlRizlG-BvVUw3mMYNtiEtQBlKH9i6_go&callback=initMap"></script>
+    <style>
+        #map {
+            height: 350px;
+            width: 100%;
+        }
+    </style>
   </head>
   <body>
-    <div class="ibox-content m-b-sm border-bottom">
-        <div class="p-xs">
-            <h2>@Model.BirdCommonName</h2>
-            <p>@Model.SpottedDate.ToShortDateString()</p>
-            <p>Location: @Model.Location</p>
-            <p>Notes: @Model.Notes</p>
-            <span><a href="@Url.Action("UpdateBirdSighting", "Home", new { id = @Model.BirdSightingID })" class="forum-item-title">Edit</a></span>
+      <div class="card mb-3 mt-2">
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <div class="d-flex flex-row align-items-center">
+              <div>
+                  <i class="fa-regular fa-bird"></i>
+              </div>
+              <div class="ms-3">
+                <a href="@Url.Action("GetBirdSighting", "Home", new { id = @Model.BirdSightingID })" class="forum-item-title"><h2>@Model.BirdCommonName</h2></a>
+                <br>
+                <div>
+                  <p id="location" class="small fa fa-map-pin" style="width: 280px;">   @Model.Location</p>
+                  <p class="small mb-0">@Model.SpottedDate.ToShortDateString()</p>
+                  <p class="small mb-0">Notes: @Model.Notes</p>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+              <div style="width: 500px;">
+                <div id="map"></div>
+                <span><a href="@Url.Action("UpdateBirdSighting", "Home", new { id = @Model.BirdSightingID })" class="fw-normal mb-0">Edit</a></span>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
+      </div>
+    <script>
+      function initMap() {
+        var geocoder = new google.maps.Geocoder();
+        var address = document.getElementById('location').innerHTML;
+        console.log(address);
+
+        geocoder.geocode({ 'address': address }, function (results, status) {
+          if (status === 'OK') {
+            var latitude = results[0].geometry.location.lat();
+            var longitude = results[0].geometry.location.lng();
+
+            // Do something with the latitude and longitude values
+            console.log('Latitude: ' + latitude);
+            console.log('Longitude: ' + longitude);
+
+             // Specify the coordinates for the map center  
+            var centerCoordinates = { lat:latitude, lng: longitude };
+
+        // Create a new map instance
+            var map = new google.maps.Map(document.getElementById('map'), {
+            center: centerCoordinates,
+            zoom: 12
+        });
+
+        // Add a marker to the map
+            var marker = new google.maps.Marker({
+            position: centerCoordinates,
+            map: map,
+            title: 'Map Marker'
+        });
+          } else {
+            console.log('Geocode was not successful for the following reason: ' + status);
+          }
+        });
+       
+        }
+
+      // Call the function to load Google Maps and initialize the geocoding function
+      window.onload = initMap;
+  </script>
   </body>
+</html>
